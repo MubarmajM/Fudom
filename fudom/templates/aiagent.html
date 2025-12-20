@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+</head>
+<body>
+    
+            <h1>AI Agent</h1>
+    
+            <br><br>
+            <p>     Welcome to the AI Agent page! Here, you can interact with a simple AI that responds to your messages.</p>
+            <textarea id="user_input" rows="4" cols="50" placeholder="Type your message here..."></textarea><br>
+            <button onclick="getAIResponse()">Send</button>
+            <h2>AI Response:</h2>
+            <p id="ai_response">The AI will respond here.</p>
+        
+        <script>
+            // Install the library: npm install @google/generative-ai
+            import { GoogleGenerativeAI } from "@google/generative-ai";
+            function getAIResponse()  {
+                
+
+                const API_KEY = 'AIzaSyAlcL_zaxJHhn6uV1rjqZzNduZ6dzlljgM'; // Replace with your actual API key
+
+                const genAI = new GoogleGenerativeAI(API_KEY);
+
+                async function runGemini() {
+                const model = genAI.getGenerativeModel({ model: "gemini" });
+                const prompt = document.getElementById('user_input').value;
+
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = response.text();
+                document.getElementById('ai_response').textContent = text;
+                }
+            }
+
+            runGemini();
+        </script>
+    </div>
+</body>
+</html>

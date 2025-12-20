@@ -1,0 +1,209 @@
+body {
+    background: linear-gradient(to right,  #220061, hsl(176, 50%, 25%));
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Pixelo', sans-serif;
+}
+div#main_div {
+    display: flex;
+}
+
+div#headerDiv {
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%) !important;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    width: auto; /* adjust if you want a fixed width */
+}
+
+li {
+    list-style: none;
+    margin: 20px;
+    text-decoration: none;
+    padding: 10px 10px;
+    background-color: rgb(4, 20, 51);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    /* Remove the line from the text */
+
+}
+
+li.navgtr {
+    list-style: none;
+    margin: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: rgb(4, 20, 51);
+    border-radius: 2px;
+    transition: background-color 0.3s;
+    /* USE THE FLEX*/
+    display: inline-block;
+    align-items: left;
+}
+
+li.active_navgtr {
+    list-style: none;
+    margin: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: rgb(13, 63, 161);
+    border-radius: 2px;
+    transition: background-color 0.3s;
+    /* USE THE FLEX*/
+    display: inline-block;
+    align-items: left;
+}
+
+li a {
+    text-decoration: none;
+    color: rgb(80, 185, 168);
+}
+
+li a.navigator {
+    text-decoration: none;
+    color: rgb(80, 185, 168);
+}
+div#form_container {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+div#profile {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: 10px;
+    text-align: right;
+    align-items: right;
+    
+}
+button#generateBtn:hover {
+    background-color: #0c044b;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: #0000;
+    transform: scale(1.05);
+}
+
+
+button#generateBtn {
+    background-color: #0a0530;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: #0000;
+}
+
+a#confirm_a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.04);
+    text-decoration: none;
+    transition: background 150ms ease, transform 120ms ease;
+}
+
+div#form_container input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px #1a1a1a;
+}
+
+li#os_info {
+    color: rgb(80, 185, 168);
+
+}
+
+
+li:hover {
+    background-color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+
+li#jiji {
+    background-color: red;
+    text-decoration: none;
+}
+
+li#jijis {
+    background-color: red;
+    text-decoration: none;
+}
+
+
+img.kittie {
+    width: 644px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+img.kittie:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+p#result {
+    padding: 10px 20px;
+    background-color: #12074e;
+    color: rgb(8, 239, 255);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+p#result:hover {
+    background-color: #1e0f6e;
+    transition: transform 0.3s;
+    transform: scale(1.15);
+}
+
+h1#yay {
+    color: #fff000;
+/*
+       (font-size changes cause the Start button to move). 
+    animation: bigsmall 1.5s infinite ease-in-out;
+    display: block;
+    line-height: 1;
+   
+*/
+}
+
+
+@keyframes bigsmall {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.6); }
+    100% { transform: scale(1); }
+}

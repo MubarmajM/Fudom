@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li class="active_navgtr"><a href="lindex.html" class="navigator">Home</a></li>
+        <li class="navgtr"><a href="random.html" class="navigator">Random Number Generator</a></li>
+        <li class="navgtr"><a href="photos.html" class="navigator">Photos</a></li>
+        <li class="navgtr"><a href="game_launcher.html" class="navigator">Speedy Click Game</a></li>
+    </ul>
+</nav>
+
+
+
+<div id="main_div">
+
+    <div id="headerDiv">
+        <br>
+        <br>
+            <h1>Main Page</h1>
+        <p>Welcome to the main page!</p>
+        <img src="img/kedi.jpeg">
+        <p>Enjoy your stay.</p>
+    </div>
+
+    <div id="profile">
+        <div id="profile_preview" style="display:flex; flex-direction:column; align-items:center;">
+            <img src="#" alt="PROFILE PHOTO" id="profile_photo" style="max-width:200px; border-radius: 50%;" id="profile_pic">
+            <p id="profile_info">USERNAME</p>
+        </div>
+        <ul>
+            <li id="profile_email" onclick="displayEmail()">EMAIL</li>
+            <li id="profile_password">PASSWORD</li>
+        </ul>
+    </div>
+
+</div>
+<br class="brio">
+<br class="brio">
+<br class="brio">
+
+    <script>
+        console.log(window.localStorage.getItem('logined')); // Will got an error if 'logined' is not set.
+        if (window.localStorage.getItem('logined') === 'true') {
+            document.getElementById('profile_info').textContent = window.localStorage.getItem('username').trim().slice(0, 13) + (window.localStorage.getItem('username').length > 13 ? '...' : '');
+            document.getElementById('profile_email').textContent = window.localStorage.getItem('email').slice(0, 13) + (window.localStorage.getItem('email').length > 13 ? '...' : '');
+            document.getElementById('profile_password').textContent = window.localStorage.getItem('password').replace(/./g, '*');
+    
+        const profilePicData = window.localStorage.getItem('profile_pic');
+        if (profilePicData) {
+            document.getElementById('profile_photo').src = profilePicData;
+        } else {
+            document.getElementById('profile_photo').src = 'img/default_profile.png';
+        }
+            document.getElementsByClassName('brio')[0].style.display = 'none';
+            document.getElementsByClassName('brio')[1].style.display = 'none';
+            document.getElementsByClassName('brio')[2].style.display = 'none';
+        } else {
+            document.getElementById('profile').style.display = 'none';
+            document.write('<br><p style="color: red; font-size: 16px;">Please sign up to see more features.</p>');
+            document.getElementById('profile').type = 'hidden';
+        }
+        function displayEmail() {
+            alert('Your email is: ' + window.localStorage.getItem('email'));
+        }
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        //const urlParams = new URLSearchParams(window.location.search);
+        const logined = window.localStorage.getItem('logined');
+
+        if (logined === 'true') {
+            console.log("SUCCESS")
+
+        } else {
+            window.location.href="index.html"
+        }
+    });
+    </script>
+    <br><br><br><br><br><br><br>
+    <ul>
+        <li id="os_info" onclick="alert('Your OS is: ' + navigator.platform)">What's my OS?</li>                
+        <li><a href="random.html" target="_blank" rel="noopener"> Generate a random number</a></li>
+        <li><a href="photos.html" target="_blank" rel="noopener">View Photos</a></li>
+        <li><a href="game_launcher.html" target="_blank" rel="noopener">Speedy Click</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">Open YouTube</a></li>
+        <li><a href="https://www.wikipedia.org/" target="_blank" rel="noopener">Read some articles</a></li>
+        <li><a href="https://www.linux.org/" target="_blank" rel="noopener">Learn about Linux</a></li>
+        <li id="jiji"><a href="logout.html">Logout</a></li>
+    </ul>
+    
+</body>
+</html>

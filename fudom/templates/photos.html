@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Photo Gallery</title>
+        <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    </head>
+    <body>
+<nav>
+    <ul>
+        <li class="navgtr"><a href="lindex.html" class="navigator">Home</a></li>
+        <li class="navgtr"><a href="random.html" class="navigator">Random Number Generator</a></li>
+        <li class="active_navgtr"><a href="photos.html" class="navigator">Photos</a></li>
+        <li class="navgtr"><a href="game_launcher.html" class="navigator">Speedy Click Game</a></li>
+    </ul>
+</nav>
+        <h1>Photo Gallery</h1>
+        <div class="gallery">
+            <img src="img/card.jpeg" alt="Photo 1" id="Photo1" onmouseover="p1()" onmouseout="o1()" class="kittie">
+            <img src="img/card.jpeg" alt="Photo 2" id="Photo2" onmouseover="p2()" onmouseout="o2()" class="kittie">
+            <img src="img/card.jpeg" alt="Photo 3" id="Photo3" onmouseover="p3()" onmouseout="o3()" class="kittie">
+            <img src="img/card.jpeg" alt="Photo 4" id="Photo4" onmouseover="p4()" onmouseout="o4()" class="kittie">
+            <img src="img/card.jpeg" alt="Photo 5" id="Photo5" onmouseover="p5()" onmouseout="o5()" class="kittie">
+            <img src="img/card.jpeg" alt="Photo 6" id="Photo6" onmouseover="p6()" onmouseout="o6()" class="kittie">
+        </div>
+
+        <script>
+            function p1(){
+                document.getElementById("Photo1").src="img/photo1.jpeg";
+            }
+            function o1(){
+                document.getElementById("Photo1").src="img/card.jpeg";
+            }
+            function p2(){
+                document.getElementById("Photo2").src="img/photo2.jpeg";
+            }
+            function o2(){
+                document.getElementById("Photo2").src="img/card.jpeg";
+            }
+            function p3(){
+                document.getElementById("Photo3").src="img/photo3.jpeg";
+            }
+            function o3(){
+                document.getElementById("Photo3").src="img/card.jpeg";
+            }
+            function p4(){
+                document.getElementById("Photo4").src="img/photo4.jpeg";
+            }
+            function o4(){
+                document.getElementById("Photo4").src="img/card.jpeg";
+            }
+            function p5(){
+                document.getElementById("Photo5").src="img/photo5.jpeg";
+            }
+            function o5(){
+                document.getElementById("Photo5").src="img/card.jpeg";
+            }
+            function p6(){
+                document.getElementById("Photo6").src="img/photo6.jpeg";
+            }
+            function o6(){
+                document.getElementById("Photo6").src="img/card.jpeg";
+            }
+        </script>
+
+        <a href="lindex.html?logined=true">Return to Main Page</a>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup successful</title>
+        <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    </head>
+    <body>
+        <h1>Thank you for joining us!</h1>
+        <ul>
+            <li><p id="email">EMAIL</p></li>
+            <li><p id="username">USERNAME</p></li>
+            <li><p id="password">PASSWORD</p></li>
+        </ul>
+        
+
+        <script>
+            const email =window.localStorage.getItem('email');
+            const username = window.localStorage.getItem('username');
+            const password = window.localStorage.getItem('password');
+            //const profilePic = window.localStorage.getItem('profile_pic');
+            
+
+            document.getElementById('email').textContent = `Email: ${email}`;
+            document.getElementById('username').textContent = `Username: ${username}`;
+            document.getElementById('password').textContent = `Password: ${password.length > 0 ? '*'.repeat(password.length) : ''}`;
+            const profilePicData = window.localStorage.getItem('profile_pic');
+            if (profilePicData && profilePicData.startsWith('data:image')) {
+                document.getElementById('profile_photo').src = profilePicData;
+            } else {
+                document.getElementById('profile_photo').src = 'img/default_profile.png';
+            }
+            window.localStorage.setItem('email', email);
+            window.localStorage.setItem('username', username);
+            window.localStorage.setItem('password', password);
+            window.localStorage.setItem('logined', 'true');
+            window.localStorage.setItem('profile_pic', profilePic);
+        </script>
+
+        <a onload="loados()" id="confirm_a">Confirm</a>
+
+        <script>
+            window.location.href = "lindex.html";
+        </script>
+    </body>
+</html>

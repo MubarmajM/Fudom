@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launcher</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="navgtr"><a href="lindex.html" class="navigator">Home</a></li>
+        <li class="navgtr"><a href="random.html" class="navigator">Random Number Generator</a></li>
+        <li class="navgtr"><a href="photos.html" class="navigator">Photos</a></li>
+        <li class="active_navgtr"><a href="game_launcher.html" class="navigator">Speedy Click Game</a></li>
+    </ul>
+</nav>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        const time = urlParams.get('time');
+        const expression = score >= (time*4) ? 'Great job!' : 'Not bad!';
+        document.write(`<h1>You've got ${score} points in ${time} seconds, ${expression}</h1>`);
+    </script>
+
+    <ul>
+        <li><a href="game_launcher.html">Play Again</a></li>
+        <li><a href="lindex.html?logined=true">Return to Main Page</a></li>
+    </ul>
+</body>
+</html>

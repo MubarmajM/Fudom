@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Number Generator</title>
+        <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    </head>
+    <body>
+<nav>
+    <ul>
+        <li class="navgtr"><a href="lindex.html" class="navigator">Home</a></li>
+        <li class="active_navgtr"><a href="random.html" class="navigator">Random Number Generator</a></li>
+        <li class="navgtr"><a href="photos.html" class="navigator">Photos</a></li>
+        <li class="navgtr"><a href="game_launcher.html" class="navigator">Speedy Click Game</a></li>
+    </ul>
+</nav>
+        <h1>Random Number Generator</h1>
+        <img src="img/random.jpeg"><br><br>
+        <button id="generateBtn" onclick="num()">Generate Random Number</button>
+        <p id="result"></p>
+
+        <script>
+            function num(){
+                var randomn;
+                randomn = Math.floor(Math.random() * 100) + 1;
+                results = document.getElementById("result");
+                results.textContent = randomn;
+            }
+        </script>
+
+
+        <a href="lindex.html?logined=true">Return to Main Page</a>
+    </body>
+</html>
