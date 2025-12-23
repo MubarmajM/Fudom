@@ -1,1 +1,37 @@
-# LOOK AT STATIC/JS FOR FINDING THE REAL-ME!
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launcher</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="navgtr"><a href="lindex.html" class="navigator">Home</a></li>
+        <li class="navgtr"><a href="random.html" class="navigator">Random Number Generator</a></li>
+        <li class="navgtr"><a href="photos.html" class="navigator">Photos</a></li>
+        <li class="active_navgtr"><a href="game_launcher.html" class="navigator">Speedy Click Game</a></li>
+    </ul>
+</nav>
+    <h1 id="yay">Speedy Butter Click</h1>
+    <br><br>
+    <ul><li><button onclick="setTime();location.href='game.html?time=' + (parseInt(localStorage.getItem('gameTime')) + 1 || 11 )">Start Game</button></li></ul>
+    // Select time long
+    <input type="number" id="time_input" placeholder="Set time (seconds)"><br><br>
+    <script>
+        var timeInput = document.getElementById('time_input');
+        timeInput.value = 10;
+        function setTime() {
+            if (timeInput.value > 0) {
+                localStorage.setItem('gameTime', timeInput.value);
+            } else {
+                localStorage.setItem('gameTime', 10); // Default time
+            }
+        }
+    </script>
+
+</body>
+</html>
